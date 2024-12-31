@@ -47,7 +47,12 @@ function love.update(dt)
 end
 
 function love.draw()
-   SceneManager.get_scene():draw()
+   -- TODO: actually add proper ui
+   if love.keyboard.isDown("m") then
+      map:draw_map()
+   else
+      SceneManager.get_scene():draw()
+   end
 end
 
 function love.mousepressed(x, y, button, istouch, presses)
