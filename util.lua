@@ -37,4 +37,11 @@ function util.is_intersection(p1, q1, p2, q2)
    return false
 end
 
+function util.shuffle(t) 
+   for i = 1, #t-1 do
+      local r = love.math.random(i, #t)
+      t[i], t[r] = t[r], t[i]
+   end
+end
+
 return util

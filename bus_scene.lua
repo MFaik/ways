@@ -65,7 +65,7 @@ function BusScene:draw()
       love.graphics.rectangle("fill", self.bus_stop_object.x, self.bus_stop_object.y, 
                               bus_stop_width, bus_stop_height)
       love.graphics.setColor(0, 0, 0)
-      love.graphics.setFont(Text.get_font("Kingbus.ttf", 40))
+      Text.set_font("Kingbus", 40)
       Text.draw_centered_text("stop "..tostring(self.bus.stop), 
                               self.bus_stop_object.x, self.bus_stop_object.y, 
                               bus_stop_width, bus_stop_height)

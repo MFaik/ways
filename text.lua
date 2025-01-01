@@ -11,10 +11,14 @@ function Text.get_font(font_name, size)
    if Text[font_name..tostring(size)] then
       return Text[font_name..tostring(size)]
    else
-      local font = love.graphics.newFont("assets/"..font_name, size)
+      local font = love.graphics.newFont("assets/"..font_name..".ttf", size)
       Text[font_name..tostring(size)] = font
       return font
    end
+end
+
+function Text.set_font(font_name, size)
+   love.graphics.setFont(Text.get_font(font_name, size))
 end
 
 return Text
