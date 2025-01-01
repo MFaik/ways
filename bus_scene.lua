@@ -32,8 +32,13 @@ end
 function BusScene:update(dt) 
    -- TODO: maybe add stopping for the bus stops?
    if self.bus_stop_object.active then
-      self.bus_stop_object.x = self.bus_stop_object.x +
-                          dt*(love.graphics.getWidth()/bus_stop_duration)
+      if self.bus.stop ~= self.bus.path[#self.bus.path] or 
+         self.bus_stop_object.x < love.graphics.getWidth()/2-bus_stop_width/2 then
+         self.bus_stop_object.x = self.bus_stop_object.x +
+                                  dt*(love.graphics.getWidth()/bus_stop_duration)
+      else
+         self.bus_stop_object.x = love.graphics.getWidth()/2-bus_stop_width/2
+      end
    end
 end
 
